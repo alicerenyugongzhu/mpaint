@@ -1,0 +1,59 @@
+
+=== Prereq. ===
+
+Using this code requires:
+
+*) A Haskell compiler, such as GHC.
+
+*) binary-strict, from here: 
+   http://hackage.haskell.org/cgi-bin/hackage-scripts/package/binary-strict
+   If you've never used Haskell before, install binary-strict by 
+   downloading and unpacking the source, cd to the directory where the
+   Setup file is, and do
+
+     $ runhaskell Setup.lhs configure
+     $ runhaskell Setup.lhs build
+     $ runhaskell Setup.lhs install
+
+That's it.
+
+
+
+=== Building the decoder ===
+
+Building the decoder works almost the same as building binary-strict. 
+From the directory where this file is, do:
+
+$ runhaskell Setup.lhs configure
+$ runhaskell Setup.lhs build
+
+Do not install it (if you're familiar with Haskell and for some reason
+want to install this decoder as a library, you'll have to edit the 
+cabal file).
+
+When done, there will be an executable file in dist/build/mp3driver.
+Pass an MP3 file to it
+
+$ mp3driver test.mp3
+
+And it will write a file, "out.wav", to the current directory.
+
+The actual decoder is in Codec/Audio/MP3. Change parts of it, run
+the build command again, and see what happens. :-)
+
+
+
+=== Trouble? ===
+
+If, for some reason, the above doesn't work, there's a manual method
+of building the mp3driver program. Copy all *.hs, *.h and *.c files
+to the same directory. Build the two C files:
+
+$ gcc -O2 -c c_imdct.c
+$ gcc -O2 -c c_synth.c
+
+Change all "import Codec.Audio.MP3.XXX" in the Haskell source files
+to "import XXX". Then:
+
+$ ghc c_imdct.o c_synth.o --make Driver.hs
+

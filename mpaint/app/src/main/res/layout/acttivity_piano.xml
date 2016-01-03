@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <ImageButton
+        android:id="@+id/down_tone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/down"/>
+    <ImageButton
+        android:id="@+id/tone_C"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dou"/>
+    <ImageButton
+        android:id="@+id/tone_D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/re"/>
+    <ImageButton
+        android:id="@+id/tone_E"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mi"/>
+    <ImageButton
+        android:id="@+id/tone_F"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dou"/>
+    <ImageButton
+        android:id="@+id/tone_G"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/re"/>
+    <ImageButton
+        android:id="@+id/tone_A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/re"/>
+    <ImageButton
+        android:id="@+id/tone_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mi"/>
+
+    <ImageButton
+        android:id="@+id/up_tone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/up"/>
+    </LinearLayout>
+
+    <com.alice.mpaint.PianoPaintView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/piano_draw"/>
+
+</LinearLayout>
